@@ -8,6 +8,7 @@ db(() => {
   var app = require('../app');
   var debug = require('debug')('18:server');
   var http = require('http');
+  // var https = require('https');
 
   /**
    * Get port from environment and store in Express.
@@ -20,15 +21,28 @@ db(() => {
    * Create HTTP server.
    */
 
-  var server = http.createServer(app);
+  // https服务
+  // var server = https.createServer({
+  //   key: fs.readFileSync('C:\\Certbot\\live\\www.hezhiyun.top\\privkey.pem'),
+  //   cert: fs.readFileSync('C:\\Certbot\\live\\www.hezhiyun.top\\cert.pem'),
+  //   ca: fs.readFileSync('C:\\Certbot\\live\\www.hezhiyun.top\\chain.pem'),
+  // },app);
+
+  // http服务
+  var server2 = http.createServer(app);
+
 
   /**
    * Listen on provided port, on all network interfaces.
    */
 
-  server.listen(port);
-  server.on('error', onError);
-  server.on('listening', onListening);
+  // server.listen(433);
+  // server.on('error', onError);
+  // server.on('listening', onListening);
+
+  server2.listen(port);
+  server2.on('error', onError);
+  server2.on('listening', onListening);
 
   /**
    * Normalize a port into a number, string, or false.
@@ -83,7 +97,7 @@ db(() => {
    */
 
   function onListening() {
-    var addr = server.address();
+    var addr = server2.address();
     var bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
