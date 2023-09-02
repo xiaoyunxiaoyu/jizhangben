@@ -1,0 +1,28 @@
+.wrap {
+    width: 500px;
+    margin: 10px auto;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+form {
+    width: 500px;
+    text-align: left;
+}
+input {
+    width: 500px;
+    height: 28px;
+    margin-bottom: 20px;
+}
+hr {
+    margin: 30px 0;
+}
+button {
+    width: 500px;
+    color: #fff;
+    background-color: #5aa669;
+    border:none;
+    height: 28px;
+    border-radius: 4px;
+}

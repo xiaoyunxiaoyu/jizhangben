@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>记账本</title>
+    <link rel="stylesheet" href="/stylesheets/account.css">
+  </head>
+  <body>
+  <div class="wrap">
+    <div class="logout">
+      <form action="/logout" method="post">
+        <button>退出</button>
+      </form>
+    </div>
+    <div class="title">
+      <h2 class="title-item">添加记录</h2>
+      <a class="title-a title-item" href="/records">查看记录</a>
+    </div>
+    <form action="/" method="post">
+      事项<br>
+      <input type="text" name="projectName"><br>
+      发生时间<br>
+      <input type="date" name="time"><br>
+      类型<br>
+      <select name="type" id="">
+        <option value="pay">支出</option>
+        <option value="get">收入</option>
+      </select><br>
+      金额<br>
+      <input type="number" name="money"><br>
+      备注<br>
+      <textarea name="remarks" cols="30" rows="10"></textarea><br>
+      <hr>
+      <button>添加</button>
+    </form>
+  </div>
+
+  </body>
+</html>

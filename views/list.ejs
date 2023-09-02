@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>记账本</title>
+    <link rel="stylesheet" href="/stylesheets/list.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="logout">
+        <form action="/logout" method="post">
+            <button>退出</button>
+        </form>
+    </div>
+    <div class="title">
+        <h2 class="title-item">记账本</h2>
+        <a class="title-a title-item" href="/">记一笔</a>
+    </div>
+    <% list.forEach(item => { %>
+        <div class="list-item">
+            <div class="time <%=item.type === 'get' ? 'success' : 'error' %>"><%= moment(item.time).format('YYYY-MM-DD') %>
+                <a class="delBtn" href="/records/<%=item._id%>"><span class="del">x</span></a>
+            </div>
+            <div class="content">
+                <div class="content-item"><%= item.projectName %></div>
+                <div class="content-item"><%= item.type === 'get' ? '收入' : '支出' %></div>
+                <div class="content-item"><%= item.money %></div>
+                <div class="content-item"><%= item.remarks %></div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+<script>
+    window.onload = function() {
+        let item = document.querySelectorAll('.list-item');
+        item.forEach(it => {
+
+            it.addEventListener('mousemove', (e) => {
+                let span = it.querySelector('.del');
+                span.style.display = 'inline-block';
+            })
+
+            it.addEventListener('mouseleave', (e) => {
+                let span = it.querySelector('.del');
+                span.style.display = 'none';
+            })
+        })
+
+        let delBtn = document.querySelectorAll('.delBtn');
+        delBtn.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if(confirm('你确定要删除文档吗？')){
+                    return true
+                }else {
+                    e.preventDefault();
+                }
+            })
+        })
+    }
+
+</script>
+</body>
+</html>

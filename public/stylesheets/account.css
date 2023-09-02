@@ -1,0 +1,47 @@
+.wrap {
+    width: 500px;
+    margin: 10px auto;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+.title-a {
+    width: 66px;
+    height: 70px;
+    line-height: 70px;
+    color: #5aa669;
+    text-decoration: none;
+}
+.logout form {
+    display: flex;
+    justify-content: flex-end;
+}
+.logout button {
+    width: 50px;
+    color: #fff;
+    background-color: #a82419;
+    border:none;
+    height: 28px;
+    border-radius: 4px;
+}
+form {
+    width: 500px;
+    text-align: left;
+}
+input,select,textarea {
+    width: 500px;
+    height: 28px;
+    margin-bottom: 20px;
+}
+textarea {
+    height: 60px;
+}
+button {
+    width: 500px;
+    color: #fff;
+    background-color: #5aa669;
+    border:none;
+    height: 28px;
+    border-radius: 4px;
+}
