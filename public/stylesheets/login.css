@@ -2,27 +2,42 @@
     width: 500px;
     margin: 10px auto;
 }
+
 .title {
     display: flex;
     justify-content: space-between;
 }
+
+.reg {
+    padding-top: 20px;
+    font-size: 12px;
+    text-align: right;
+}
+.reg a {
+    text-decoration: none;
+    color: #5aa669;
+}
+
 form {
     width: 500px;
     text-align: left;
 }
+
 input {
     width: 500px;
     height: 28px;
     margin-bottom: 20px;
 }
+
 hr {
     margin: 30px 0;
 }
+
 button {
     width: 500px;
     color: #fff;
     background-color: #5aa669;
-    border:none;
+    border: none;
     height: 28px;
     border-radius: 4px;
 }

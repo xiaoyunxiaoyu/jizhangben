@@ -17,7 +17,7 @@ router.post('/reg', async (req, res) => {
         }
         AuthModel.create({userName, password: md5(password)}).then(result=> {
             if(result) {
-                res.render('status', {message: '注册成功', link: '/login'})
+                res.render('auth/login')
             }
         })
     }else {
