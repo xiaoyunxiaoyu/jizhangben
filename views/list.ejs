@@ -15,6 +15,9 @@
         <h2 class="title-item">记账本</h2>
         <a class="title-a title-item" href="/">记一笔</a>
     </div>
+    <% if(!list.length) { %>
+        <div>暂无数据...</div>
+    <% }%>
     <% list.forEach(item => { %>
         <div class="list-item">
             <div class="time <%=item.type === 'get' ? 'success' : 'error' %>"><%= moment(item.time).format('YYYY-MM-DD') %>

@@ -12,11 +12,16 @@ router.get('/', loginCheckMiddleware, function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    AccountModel.create(req.body).then(result => {
-        console.log('res:', result);
-        const message = result ? '操作成功' : '操作失败'
-        res.render('status', {message, link: '/records'});
-    })
+    const {projectName, money} = req.body;
+    if(projectName && money) {
+        AccountModel.create(req.body).then(result => {
+            const message = result ? '操作成功' : '操作失败'
+            res.render('status', {message, link: '/records'});
+        })
+    }else {
+        res.render('status', {message: '事项和金额必填', link: '/'})
+    }
+
 });
 
 router.get('/records', loginCheckMiddleware, function (req, res, next) {
