@@ -21,7 +21,7 @@ router.post('/reg', async (req, res) => {
             }
         })
     }else {
-        res.send('用户名和密码必填')
+        res.render('status', {message: '用户名和密码必填', link: '/reg'});
     }
 })
 
@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
        }
        res.render('status', {message: '用户名或密码不正确，请重新登录', link: '/login'})
     }else {
-        res.send('用户名和密码必填')
+        res.render('status', {message: '用户名和密码必填', link: '/login'});
     }
 })
 
